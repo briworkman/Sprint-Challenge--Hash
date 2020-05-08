@@ -6,9 +6,22 @@ class Ticket:
 
 
 def reconstruct_trip(tickets, length):
-    
     """
     YOUR CODE HERE
     """
+    trips = {}
+    routes = []
+    index = 0
+    destination = "NONE"
 
-    return route
+    for i in tickets:
+        # TODO: set the starting location as the key and the destination as its value
+        trips[i.source] = i.destination
+
+    while index < length:
+        # TODO: set the current destination as the new source of the next ticket
+        destination = trips.get(destination)
+        routes.append(destination)
+        index += 1
+
+    return routes
